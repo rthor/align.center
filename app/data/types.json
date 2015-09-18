@@ -1,0 +1,6 @@
+[{
+  "name": "Fixed size margins",
+  "target": "ie9+",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula porta libero, et scelerisque nunc venenatis non. Quisque eget enim fringilla, tempus est non, sodales erat. Curabitur id lacucondimentum augue est in felis. Proin volutpat tempor finibus. Nulla quis blandit erat. Sed ut risus eu tellus vulputate tristique.",
+  "code": ".Center {\n  bottom: 0;\n  display: block;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}"
+}]

@@ -1,0 +1,27 @@
+.Heading {
+  color: #444;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 100;
+  letter-spacing: -2px;
+  position: relative;
+  text-shadow+: 0 1px 0 #efefef;
+  text-shadow+: -1px 1px 0 #efefef;
+  text-shadow+: 1px 1px 0 #efefef;
+
+  &-em {
+    color: #ee5033;
+  }
+
+  &::before {
+    border-bottom: 1px solid #999;
+    content: '';
+    bottom: -3px;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+}
