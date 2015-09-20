@@ -60,8 +60,13 @@
     "vinyl-transform": "^1.0.0"
   },
   "dependencies": {
+    "classlist": "^1.0.1",
+    "dom-events": "^0.1.1",
+    "gsap": "^1.18.0",
     "highlight.js": "^8.8.0",
+    "jade": "^1.11.0",
     "jquery": "^2.1.4",
+    "keycode": "^2.1.0",
     "normalize.css": "^3.0.2",
     "tux-scroll-to": "^1.1.0"
   }

@@ -1,37 +1,13 @@
-doctype html
-html.App
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Aranja template
-    link(rel='stylesheet', href='styles/main.css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Alegreya+Sans:800,300,500')
-    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/railscasts.min.css')
-  body.App-body
-    div(data-align='center')
-      h1.Heading #[span.Heading-em align].center
-      p.App-desc Because aligning stuff is hard!o
-    div(data-align='middle')
-      div(data-align-content)
-        .Container: .Cards(data-cards)
-          .Card
-            buttton.Card-close +
-            h2.Card-title Fixed size margins
-            p.Card-target IE7+
-            .Card-info
-              .Container
-                .Card-description.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula porta libero, et scelerisque nunc venenatis non. Quisque eget enim fringilla, tempus est non, sodales erat. Curabitur id lacucondimentum augue est in felis. Proin volutpat tempor finibus. Nulla quis blandit erat. 
-              pre.Card-code: code.js.
-                .Center {
-                  bottom: 0;
-                  display: block;
-                  left: 0;
-                  margin: auto;
-                  position: absolute;
-                  right: 0;
-                  top: 0;
-                }
-    script(src="scripts/main.js")
+extends _partials/layout
+block append vars
+  - serverSide = false
+
+block content
+  div(data-align='center')
+    h1.Heading #[span.Heading-em align].center
+    p.App-desc Because aligning stuff is hard!o
+  div(data-align='middle')
+    div(data-align-content)
+      .Container
+        .Cards
+          include fixed-size/index.jade

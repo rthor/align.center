@@ -1,14 +1,13 @@
-import $ from 'jquery';
 import hljs from 'highlight.js';
 import '../components/cards';
-import '../components/center';
 
 class App {
   constructor() {
-    console.log('Started...');
-    $('pre code').each((i, block) => {
-      hljs.highlightBlock(block);
-    });
+    let codeSnippets = [...document.querySelectorAll('pre code')];
+
+    for (let snippet of codeSnippets) {
+      hljs.highlightBlock(snippet);
+    }
   }
 
   static start() {
