@@ -7,11 +7,11 @@ gulp.task('deploy-log', function(cb) {
 });
 
 gulp.task('deploy-ghpages', function(cb) {
-  var child = exec('git add --all && git commit -m "Deploy" && git subtree push --prefix dist origin gh-pages', cb);
+  var child = exec('git subtree push --prefix dist origin gh-pages', cb);
   child.stdout.pipe(process.stdout);
   child.stderr.pipe(process.stderr);
 });
 
-gulp.task('deploy', ['build'], function(cb) {
+gulp.task('deploy', function(cb) {
   runSequence('deploy-ghpages', 'deploy-log', cb);
 });
