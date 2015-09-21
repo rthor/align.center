@@ -4,7 +4,7 @@ var config = require('../config');
 gulp.task('copy', function() {
   gulp.src([
     config.source + '/**/*.html',
-    config.source + '/app.yaml',
+    config.source + '/CNAME',
     config.source + '/images/**/*.ico',
     config.source + '/fonts/**',
     config.source + '/data/**',

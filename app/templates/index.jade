@@ -1,13 +1,28 @@
 extends _partials/layout
+
 block append vars
   - serverSide = false
 
 block content
-  div(data-align='center')
-    h1.Heading #[span.Heading-em align].center
-    p.App-desc Because aligning stuff is hard!o
-  div(data-align='middle')
-    div(data-align-content)
-      .Container
-        .Cards
-          include fixed-size/index.jade
+  if !wip
+    .Align--center
+      h1.Heading #[span.Heading-em align].center
+      p.App-desc Because aligning stuff is hard!
+    .Align--middle
+      .Align-fill
+        .Container
+          .Cards
+            include fixed-size/index.jade
+  else
+    .Align--middle: div
+        h1.Heading #[span.Heading-em align].center
+        p.App-desc Coming soonish...
+
+  script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-67855277-1', 'auto');
+    ga('send', 'pageview');
+
