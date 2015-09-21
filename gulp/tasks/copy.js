@@ -5,9 +5,9 @@ gulp.task('copy', function() {
   gulp.src([
     config.source + '/**/*.html',
     config.source + '/CNAME',
-    config.source + '/images/**/*.ico',
+    config.source + '/*.ico',
     config.source + '/fonts/**',
-    config.source + '/data/**',
+    config.source + '/images/**',
     config.source + '/videos/**'
   ], {base: config.source})
     .pipe(gulp.dest(config.target));
