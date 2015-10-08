@@ -7,6 +7,5 @@ class Router {
   }
 }
 
-Router.startState = document.location.pathname;
 
 export default Router;

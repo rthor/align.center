@@ -1,0 +1,9 @@
+mixin trick(name, trick, support)
+  .Card(class=(expanded === trick) ? 'Card--expanded' : '', data-card)
+    .Card-view
+      h2.Card-title= name
+      a.Card-close(href='/') +
+      a.Card-link(data-route, href='/#{trick}') Expand
+      p.Card-target= support
+      .Card-info
+        block

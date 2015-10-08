@@ -1,21 +1,12 @@
-extends _partials/layout
+extends partials/_layout
 
 block append vars
-  - serverSide = false
+  - expanded = null
 
 block content
   if !wip
-    .Align--center
-      h1.Heading #[span.Heading-em align].center
-      p.App-desc Because aligning stuff is hard!
-    .Align--middle
-      .Align-fill
-        .Container
-          .Cards
-            include fixed-size/index.jade
+    include tricks/all
   else
     .Align--middle: div
         h1.Heading #[span.Heading-em align].center
         p.App-desc Coming soonish...
-    script.
-      console.log(new Date())
