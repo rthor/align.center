@@ -4,8 +4,10 @@
 
 .Card {
   color: #fff;
+  float: left;
   font-weight: 100;
   height: 200px;
+  margin: 5px;
   position: relative;
   width: 200px;
 
@@ -14,6 +16,18 @@
     height: 100%;
     overflow: hidden;
     padding: 20px;
+  }
+
+  &:nth-child(2) &-view {
+    background: #8bda65;
+  }
+
+  &-heading {
+    font-size: 16px;
+    margin: 2em 0 0;
+    letter-spacing: 4px;
+    position: relative;
+    text-transform: uppercase;
   }
   
   &-link {
@@ -37,9 +51,13 @@
   }
 
   &-code {
+    border-top: 10px solid #1e1e1e;
+    background-color: #232323;
     font-size: 16px;
     line-height: 24px;
-    margin: 100px -20px 0;
+    margin: 0 -20px;
+    padding: 25px 0;
+    position: relative;
   }
 
   &-close {
@@ -70,6 +88,7 @@
     top: 0;
     right: 0;
     width: 100%;
+    z-index: 1;
   }
 
   &--animating > &-view {
