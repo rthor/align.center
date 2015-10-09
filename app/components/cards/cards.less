@@ -19,7 +19,7 @@
   }
 
   &:nth-child(2) &-view {
-    background: #8bda65;
+    background: #4dbd2c;
   }
 
   &-heading {
@@ -46,8 +46,9 @@
     font-size: 24px;
     line-height: 40px;
     margin: 100px 0 0;
-    transition: transform .3s;
-    transform: translate(0, 100%);
+    opacity: 0;
+    transition: opacity .3s, visibility 0s .3s;
+    visibility: hidden;
   }
 
   &-code {
@@ -65,24 +66,24 @@
     background: none;
     border: none;
     cursor: pointer;
-    display: none;
     color: #fff;
     font-size: 48px;
+    opacity: 0;
     position: absolute;
     right: 20px;
     text-decoration: none;
     top: 20px;
+    transition: opacity .3s, visibility 0s .3s;
     transform: rotate(45deg);
+    visibility: hidden;
   }
 
   &--expanded {
     position: static;
   }
 
-
   &--expanded > &-view {
     left: 0;
-    min-height: 100%;
     overflow-y: auto;
     position: fixed;
     top: 0;
@@ -92,19 +93,19 @@
   }
 
   &--animating > &-view {
-    position: fixed;
-    overflow: hidden;
-  }
-
-  &--expanded &-info {
-    transform: translate(0, 0);
+    overflow-y: hidden;
+    position: absolute;
   }
 
   &--expanded &-link {
     display: none;
   }
 
-  &--expanded &-close {
-    display: block;
+  &--expanded &-info,
+  &--animating &-info,
+  &--expanded:not(&--animating) &-close {
+    opacity: 1;
+    transition-delay: 0s;
+    visibility: visible;
   }
 }

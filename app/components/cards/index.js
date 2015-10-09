@@ -2,15 +2,17 @@ import Component from '../component';
 import Router from '../router';
 import keycode from 'keycode';
 import gsap from 'gsap';
+import $ from 'jquery';
 
 class Card extends Component {
   constructor(element) {
     super(element);
 
     this.view_ = this.element_.querySelector('.Card-view');
+    this.info_ = this.element_.querySelector('.Card-info');
     this.link_ = this.element_.querySelector('.Card-link');
     this.close_ = this.element_.querySelector('.Card-close');
-    this.isExpanded_ = false;
+    this.isExpanded_ = $(this.element_).hasClass('Card--expanded');
     this.registerEvents();
   }
 
@@ -39,11 +41,12 @@ class Card extends Component {
   animate(direction, state) {
     return new Promise((resolve, reject) => {
       this.element_.classList.add('Card--animating');
+      this.info_.style.width = window.innerWidth;
 
-      gsap[direction](this.view_, .2, {
-        top: state.top,
-        left: state.left,
+      gsap[direction](this.view_, .3, {
         height: state.height,
+        left: state.left,
+        top: state.top,
         width: state.width,
 
         onComplete: () => {
@@ -57,6 +60,7 @@ class Card extends Component {
             width: ''
           });
 
+          this.info_.style.width = '';
           resolve();
         }
       });
@@ -65,6 +69,7 @@ class Card extends Component {
 
   collapse() {
     this.isExpanded_ = false;
+
     this.animate('to', this.element_.getBoundingClientRect()).then(() => {
       this.element_.classList.remove('Card--expanded');
     });
@@ -73,6 +78,7 @@ class Card extends Component {
   expand() {
     this.isExpanded_ = true;
     this.element_.classList.add('Card--expanded');
+    this.info_.style.width = window.innerWidth;
     this.animate('from', this.element_.getBoundingClientRect());
   }
 }
